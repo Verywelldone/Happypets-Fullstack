@@ -1,57 +1,41 @@
-.welcome {
-  width: 75%;
-  margin: 0 auto;
-  padding-top: 2rem;
+.home {
+  background: url("src/assets/img/background.jpg")  no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+.landing-text{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.welcome hr {
-  border-top: 2px solid #b4b4b4;
-  width: 95%;
-  margin-top: .3rem;
-  margin-bottom: 1rem;
+.landing-text h1 {
+  font-size: 500%;
+  font-weight: 700;
 }
 
-.fa-code {
-  color: #e54d26;
+.padding{
+  padding: 80px 0;
 }
 
-.fa-bold {
-  color: #563d7c;
+.padding img{
+  width: 100%;
 }
 
-.fa-css3-alt {
-  color: #2163af;
+#fixed{
+  background: url("src/assets/img/background2.jpg") no-repeat center center fixed;
+  height: 60%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
 }
 
-.fa-code, .fa-bold, .fa-css3-alt {
-  font-size: 4em;
-  margin: 1rem;
-}
-
-.btn-primary {
-  background-color: #6648b1;
-  border: 1px solid #6648b1
-}
-
-.btn-primary:hover {
-  background-color: #563d7c;
-  border: 1px solid #563d7c;
-}
-
-#side-image {
-  max-width: 50%;
-  margin-left: 150px;
-}
-
-@media (max-width: 768px) {
-  .display-4 {
-    font-size: 200%;
+@media (max-width: 768px){
+  .landing-text h1{
+    font-size: 300%;
   }
 
-}
-
-@media ( max-width: 576px) {
-  .display-4 {
-    font-size: 160%;
-  }
 }
