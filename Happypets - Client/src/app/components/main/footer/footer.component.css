@@ -1,0 +1,34 @@
+
+footer{
+  width: 100%;
+  background-color: #23415C;
+  padding: 1% 5% 1% 5%;
+  color: #FFFFFF;
+}
+
+.fa{
+  padding: 15px;
+  font-size: 25px;
+  color:#FFFFFF;
+}
+.fa:hover{
+  color: #D5D5D5 ;
+  text-decoration: none;
+}
+
+.icon {
+  max-width: 150px;
+}
+
+
+@media (max-width: 768px){
+  .fa{
+    font-size: 20px;
+    padding: 10px;
+  }
+  .icon{
+    padding-top: 5%;
+    max-width: 100px;
+  }
+
+}

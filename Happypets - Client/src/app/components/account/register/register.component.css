@@ -1,0 +1,68 @@
+
+.main-section{
+  margin: 130px auto 0;
+  padding: 0;
+}
+
+.modal-content{
+  background-color: #434e5a;
+  opacity: .8;
+  padding:  0 18px;
+  border-radius: 10px;
+}
+
+.user-img img{
+  height: 120px;
+  width: 120px;
+}
+
+.user-img{
+  margin-top: -60px;
+  margin-bottom: 45px;
+}
+
+.form-group{
+  margin-bottom: 25px;
+}
+
+.form-group input  {
+  height: 42px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding-left:54px;
+}
+
+.form-group select  {
+  height: 42px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding-left:54px;
+}
+
+option {
+ font-size: 10px;
+}
+
+.form-group::before{
+  position:absolute;
+  font-size: 22px;
+  left:28px;
+  padding-top:4px;
+  color: #555e60;
+}
+
+a{
+  color: #FFFFFF;
+  font-size: 18px;
+
+}
+
+@media (min-width: 768px) {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  float: none;
+  }
+}
