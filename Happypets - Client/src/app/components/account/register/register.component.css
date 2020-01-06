@@ -6,7 +6,6 @@
 
 .modal-content{
   background-color: #434e5a;
-  opacity: .8;
   padding:  0 18px;
   border-radius: 10px;
 }
@@ -34,28 +33,28 @@
   padding-left:54px;
 }
 
-.form-group select  {
+.form-group select {
   height: 42px;
   border-radius: 5px;
   border: 0;
   font-size: 18px;
   letter-spacing: 2px;
-  padding-left:54px;
+  padding-left: 54px;
 }
 
-option {
- font-size: 10px;
-}
+/*option {*/
+/* font-size: 10px;*/
+/*}*/
 
-.form-group::before{
-  position:absolute;
+.form-group::before {
+  position: absolute;
   font-size: 22px;
-  left:28px;
-  padding-top:4px;
+  left: 28px;
+  padding-top: 4px;
   color: #555e60;
 }
 
-a{
+a {
   color: #FFFFFF;
   font-size: 18px;
 

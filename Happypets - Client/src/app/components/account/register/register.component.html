@@ -1,4 +1,3 @@
-
 <div class="modal-dialog text-center">
   <div class="col-sm-9 main-section">
     <div class="modal-content">
@@ -7,34 +6,31 @@
       </div>
 
       <div class="col-12 form-input">
-        <form action="">
+        <form action="" (ngSubmit)="onSubmit()">
 
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="First name">
+            <input type="text" class="form-control"  [(ngModel)]="user.firstName" name="userfirstname" placeholder="First name">
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Last name">
+            <input type="text" class="form-control"  [(ngModel)]="user.lastName" name="userlastname" placeholder="Last name">
           </div>
 
           <div class="form-group">
-            <select  class="form-control">
-              <option hidden disabled selected> Select your country </option>
-              <option  *ngFor="let country of countryName ">{{country.name}}</option>
-            </select>
+            <input type="email" class="form-control"   [(ngModel)]="user.email" name="useremail" placeholder="Enter Email">
           </div>
 
           <div class="form-group">
-            <input type="email" class="form-control" placeholder="Enter Email">
+            <input type="password" class="form-control"  [(ngModel)]="user.password" name="userpassword" placeholder="Enter Password">
           </div>
 
-          <div class="form-group">
-            <input type="password" class="form-control" placeholder="Enter Password">
-          </div>
-
-          <button type="submit" class="btn btn-large btn-block btn-primary">Register</button>
+          <button type="submit" class="btn btn-large btn-block btn-primary" >Register</button>
         </form>
 
+      </div>
+
+      <div  class="col-12" [hidden]="!submitted">
+        <h4>You registered successfully!</h4>
       </div>
 
       <div class="col-12 forgot">
