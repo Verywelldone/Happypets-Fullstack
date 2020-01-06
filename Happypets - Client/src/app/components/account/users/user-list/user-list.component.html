@@ -1,11 +1,15 @@
 <div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Employee List</h2>
+  <div class="panel-heading text-center">
+    <h2>User List</h2>
   </div>
   <div class="panel-body">
+    <div class="search-hero">
+      <input type="text" [formControl]="filter" placeholder="Filter states...">
+    </div>
     <table class="table table-striped">
       <thead>
       <tr>
+        <th>User ID</th>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Email</th>
@@ -13,15 +17,20 @@
       </tr>
       </thead>
       <tbody>
+
       <tr *ngFor="let user of users | async">
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.email}}</td>
+        <td>{{user?.userID}}</td>
+        <td>{{user?.firstName}}</td>
+        <td>{{user?.lastName}}</td>
+        <td>{{user?.email}}</td>
+
         <td>
-          <button (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
-          <button (click)="userDetails(user.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          <button (click)="deleteUser(user.userID)" class="btn btn-danger">Delete</button>
+          <button (click)="userDetails(user.userID)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          <button (click)="updateUser(user.userID)" class="btn alert-success" style="margin-left: 10px">Update</button>
         </td>
       </tr>
+
       </tbody>
     </table>
   </div>

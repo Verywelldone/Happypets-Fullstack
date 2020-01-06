@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'home', component: HomeComponent},
   {path: 'user-list', component: UserListComponent},
-  {path: 'update-user/:id', component: UpdateUserComponent},
+  {path: 'update/:id', component: UpdateUserComponent},
   {path: 'details/:id', component: UserDetailsComponent}
 ];
 

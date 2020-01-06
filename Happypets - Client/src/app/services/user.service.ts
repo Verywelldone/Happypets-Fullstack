@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../components/model/user.model';
 
@@ -16,25 +16,25 @@ export class UserService {
   }
 
   getUser(id: number): Observable<any> {
+    console.log(id + ' ID FORM SERVICE ');
     return this.http.get(`${this.baseUrl}user-list/${id}`);
   }
 
   createUser(user: User) {
-    // return this.http.post(`${this.baseUrl}save-user`, user);
     return this.http.post<User>(`${this.baseUrl}save-user`, user);
   }
 
   updateUser(id: number, value: any): Observable<object> {
-    return this.http.put(`${this.baseUrl}update-user/${id}`, {responseType: 'text'});
+    return this.http.put(`${this.baseUrl}update-user/${id}`, value);
   }
 
+
   deleteUser(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete-user/${id}`, {responseType: 'text'});
+    return this.http.delete(`${this.baseUrl}delete-user/${id}`, {responseType: 'text'});
   }
 
   getUserList(): Observable<any> {
     return this.http.get(`${this.baseUrl}user-list`);
   }
-
 
 }

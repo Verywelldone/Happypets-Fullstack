@@ -24,6 +24,9 @@ import { UpdateUserComponent } from './components/account/users/update-user/upda
 import { UserListComponent } from './components/account/users/user-list/user-list.component';
 import { UserDetailsComponent } from './components/account/users/user-details/user-details.component';
 
+// search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FilterPipe } from './components/account/users/user-list/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,7 @@ import { UserDetailsComponent } from './components/account/users/user-details/us
     UpdateUserComponent,
     UserListComponent,
     UserDetailsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ import { UserDetailsComponent } from './components/account/users/user-details/us
     MatSliderModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
