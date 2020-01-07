@@ -3,6 +3,8 @@ import {Component, ElementRef, OnInit} from '@angular/core';
 import {UserService} from '../../../services/user.service';
 import {User} from '../../model/user.model';
 import {Router} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserDetails} from '../../model/user-details.model';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +14,11 @@ import {Router} from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   user: User = new User();
+  userDetails: UserDetails = new UserDetails();
   submitted = false;
+  confirmPassword: string;
+
+
 
   constructor(
     private elementRef: ElementRef,
@@ -30,6 +36,7 @@ export class RegisterComponent implements OnInit {
   }
 
   save() {
+    this.user.userDetails = this.userDetails;
     this.userService.createUser(this.user)
       .subscribe(data => console.log(data), error => console.log(error));
     this.user = new User();
@@ -43,5 +50,10 @@ export class RegisterComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/login']);
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+
   }
 }

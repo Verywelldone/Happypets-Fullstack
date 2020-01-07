@@ -1,6 +1,8 @@
 package happypets.controllers;
 
 import happypets.model.User;
+import happypets.model.UserDetails;
+import happypets.repository.UserDetailsRepository;
 import happypets.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -20,6 +22,9 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserDetailsRepository userDetailsRepository;
+
     @GetMapping("user-list")
     public List<User> getAllUsers(){
         System.out.println(userRepository.findAll());
@@ -37,19 +42,18 @@ public class UserController {
         return userRepository.save(user);
     }
 
-//    @PutMapping("update-user/{userID}")
+
     @RequestMapping(value = "update-user/{userID}", method = RequestMethod.PUT)
     public ResponseEntity<User> updateUser(@PathVariable(value = "userID") long userid, @Valid @RequestBody User userDetails){
 
         User user = userRepository.findById(userid).orElseThrow(()->new ResourceNotFoundException("User not found for this id:"+userid));
 
-        System.out.println(" USER DETAILS FROM FRONTEND");
-        System.out.println(userDetails);
 
+        user.setUsername(userDetails.getUsername());
 
-        user.setEmail(userDetails.getEmail());
-        user.setLastName(userDetails.getLastName());
-        user.setFirstName(userDetails.getFirstName());
+        user.getUserDetails().setAddress(userDetails.getUserDetails().getAddress());
+        user.getUserDetails().setCountry(userDetails.getUserDetails().getCountry());
+        user.getUserDetails().setEmail(userDetails.getUserDetails().getEmail());
 
         final User updatedUser = userRepository.save(user);
         return ResponseEntity.ok(updatedUser);

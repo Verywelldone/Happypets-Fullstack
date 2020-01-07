@@ -32,11 +32,10 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateUser() {
-    console.log(' USER AFTER CHANGE, BEFORE updateUer call');
-    console.log(this.user);
     this.userService.updateUser(this.userID, this.user)
-      .subscribe(data => this.gotoList(), error => console.log(error));
-
+      .subscribe(data => {
+        console.log(data);
+        });
   }
 
   onSubmit() {
@@ -46,4 +45,10 @@ export class UpdateUserComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/user-list']);
   }
+
+   delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+
+  }
+
 }

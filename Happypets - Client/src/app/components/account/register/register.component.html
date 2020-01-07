@@ -1,42 +1,74 @@
-<div class="modal-dialog text-center">
-  <div class="col-sm-9 main-section">
-    <div class="modal-content">
-      <div class="col-12 user-img">
-        <img src="assets/img/face.png" alt="">
-      </div>
+<script src="... /angular-countries/dist/js/ngCountries.js"></script>
 
-      <div class="col-12 form-input padding">
-        <form action="" (ngSubmit)="onSubmit()">
+<!-- MultiStep Form -->
 
-          <div class="form-group">
-            <input type="text" class="form-control"  [(ngModel)]="user.firstName" name="userfirstname" placeholder="First name">
+<script src="../../../../../multibox.js"></script>
+<div class="container-fluid" id="grad1">
+  <div class="row justify-content-center mt-0">
+    <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+      <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+        <h2><strong>Sign Up Your User Account</strong></h2>
+        <p>Fill all form field to go to next step</p>
+        <div class="row">
+          <div class="col-md-12 mx-0">
+            <form id="msform">
+              <!-- progressbar -->
+              <ul id="progressbar">
+                <li class="active" id="account"><strong>Account</strong></li>
+                <li id="personal"><strong>Personal</strong></li>
+                <li id="confirm"><strong>Finish</strong></li>
+              </ul> <!-- fieldsets -->
+
+              <fieldset>
+                <div class="form-card">
+                  <h2 class="fs-title">Account Information</h2>
+
+
+                  <input type="text" name="uname"  [(ngModel)]="user.username" required placeholder="UserName" />
+                  <input type="password"  name="pwd"  [(ngModel)]="user.password" required placeholder="Password" />
+                  <input type="password" name="cpwd" [(ngModel)]="confirmPassword" required placeholder="Confirm Password" />
+
+                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+              </fieldset>
+
+              <fieldset>
+                <div class="form-card">
+                  <h2 class="fs-title">Personal Information</h2>
+
+                  <input type="text" name="fname"   [(ngModel)]="userDetails.firstName" placeholder="First Name" />
+                  <input type="text" name="lname"   [(ngModel)]="userDetails.lastName" placeholder="Last Name" />
+                  <input type="email" name="fname"  [(ngModel)]="userDetails.email" placeholder="Email" />
+                  <input type="text" name="phone"   [(ngModel)]="userDetails.phone" placeholder="Phone Number" />
+                  <input type="text" name="address" [(ngModel)]="userDetails.address" placeholder="Address" />
+
+                  <select name="country" [(ngModel)]="userDetails.country" class="form-control list-dt" style="margin-top: 5px;  margin-bottom: 5px">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Italy">Italy</option>
+                  </select>
+
+                </div>
+                  <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                  <input type="button" (click)="onSubmit()" name="make_payment" class="next action-button" value="Confirm" />
+                </fieldset>
+
+              <fieldset>
+                <div class="form-card">
+                  <h2 class="fs-title text-center">Success !</h2> <br><br>
+                  <div class="row justify-content-center">
+                    <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image"> </div>
+                  </div> <br><br>
+                  <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                      <h5>You Have Successfully Signed Up</h5>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
           </div>
-
-          <div class="form-group">
-            <input type="text" class="form-control"  [(ngModel)]="user.lastName" name="userlastname" placeholder="Last name">
-          </div>
-
-          <div class="form-group">
-            <input type="email" class="form-control"   [(ngModel)]="user.email" name="useremail" placeholder="Enter Email">
-          </div>
-
-          <div class="form-group">
-            <input type="password" class="form-control"  [(ngModel)]="user.password" name="userpassword" placeholder="Enter Password">
-          </div>
-
-          <button type="submit" class="btn btn-large btn-block btn-primary" >Register</button>
-        </form>
-
-      </div>
-
-      <div  class="col-12" [hidden]="!submitted">
-        <h4>You registered successfully!</h4>
-      </div>
-
-      <div class="col-12 forgot">
-        <a href="/login"> Already registered?</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
-

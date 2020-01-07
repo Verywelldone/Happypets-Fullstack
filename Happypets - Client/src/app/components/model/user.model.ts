@@ -1,7 +1,8 @@
+import {UserDetails} from './user-details.model';
+
 export class User {
   userID: number;
-  firstName: string;
-  lastName: string;
-  email: string;
+  userDetails: UserDetails;
+  username: string;
   password: string;
 }

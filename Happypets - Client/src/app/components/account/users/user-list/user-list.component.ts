@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../../../model/user.model';
 import {UserService} from '../../../../services/user.service';
 import {Router} from '@angular/router';
-import {from, Observable} from 'rxjs';
-import {FilterPipe} from './filter.pipe';
 
 
 @Component({
@@ -12,7 +10,10 @@ import {FilterPipe} from './filter.pipe';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: Observable<any>;
+  users: User[];
+
+  searchText: any;
+
   constructor(private userService: UserService, private router: Router) {
   }
 
@@ -21,7 +22,9 @@ export class UserListComponent implements OnInit {
   }
 
   reloadData() {
-    this.users = this.userService.getUserList();
+    this.userService.getUserList().subscribe(data =>{
+      this.users = data;
+    });
   }
 
   deleteUser(id: number) {

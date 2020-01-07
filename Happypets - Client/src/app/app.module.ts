@@ -26,7 +26,6 @@ import { UserDetailsComponent } from './components/account/users/user-details/us
 
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FilterPipe } from './components/account/users/user-list/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +41,7 @@ import { FilterPipe } from './components/account/users/user-list/filter.pipe';
     ConnectLinksComponent,
     UpdateUserComponent,
     UserListComponent,
-    UserDetailsComponent,
-    FilterPipe,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

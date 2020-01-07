@@ -1,21 +1,60 @@
-<div class="container text-center">
-  <h3>Update User</h3>
-  <div [hidden]="submitted" style="width: 400px;">
+<div class="container text-center mat-bottom-sheet-container padding card-body card" style="margin-top: 250px">
+  <h3 class="landing-text">Update User: {{user.firstName}} {{user.lastName}}</h3>
+  <div [hidden]="submitted" class="col-12 form-input padding">
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstName" name="firstName">
+        <label for="firstName"> <b>First Name</b></label>
+          <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstName" name="firstName">
+
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastName" name="lastName">
+        <label for="lastName"><b>Last Name</b> </label>
+          <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastName" name="lastName">
+
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="emailId" required [(ngModel)]="user.email" name="emailId">
-      </div>
+        <label for="email"> <b> Email</b> </label>
+         <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="emailId">
 
-      <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+      <button (click)="gotoList()" class="btn btn-info">Cancel</button>
+      <button type="submit"  data-toggle="modal" href="#ignismyModal" class="btn btn-success">Submit</button>
+
     </form>
   </div>
 
 </div>
+
+
+<!--Model Popup starts-->
+<div class="container">
+  <div class="row">
+
+    <div class="modal fade" id="ignismyModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+          </div>
+
+          <div class="modal-body">
+
+            <div class="thank-you-pop">
+              <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+              <p>User has been succesfully updated!</p>
+
+              <button (click)="gotoList()" data-dismiss="modal" class="btn btn-info">Back to user list</button>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Model Popup ends-->
+
