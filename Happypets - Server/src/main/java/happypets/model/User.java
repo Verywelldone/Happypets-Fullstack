@@ -23,6 +23,14 @@ public class User {
     private String password;
 
 
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
     public UserDetails getUserDetails() {
         return userDetails;
     }

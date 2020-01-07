@@ -1,24 +1,38 @@
 <div class="container text-center mat-bottom-sheet-container padding card-body card" style="margin-top: 250px">
-  <h3 class="landing-text">Update User: {{user.firstName}} {{user.lastName}}</h3>
+  <h3 class="landing-text">Update User: {{user.userDetails.firstName}} {{user.userDetails.lastName}}</h3>
   <div [hidden]="submitted" class="col-12 form-input padding">
     <form (ngSubmit)="onSubmit()">
+
       <div class="form-group">
         <label for="firstName"> <b>First Name</b></label>
-          <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstName" name="firstName">
-
+          <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.userDetails.firstName" name="firstName">
       </div>
 
       <div class="form-group">
         <label for="lastName"><b>Last Name</b> </label>
-          <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastName" name="lastName">
-
+          <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.userDetails.lastName" name="lastName">
       </div>
 
       <div class="form-group">
         <label for="email"> <b> Email</b> </label>
-         <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="emailId">
-
+         <input type="text" class="form-control" id="email" required [(ngModel)]="user.userDetails.email" name="emailId">
       </div>
+
+      <div class="form-group">
+        <label for="country"> <b> Country </b> </label>
+        <input type="text" class="form-control" id="country" required [(ngModel)]="user.userDetails.country" name="country">
+      </div>
+
+      <div class="form-group">
+        <label for="address"> <b> Address </b> </label>
+        <input type="text" class="form-control" id="address" required [(ngModel)]="user.userDetails.address" name="address">
+      </div>
+
+      <div class="form-group">
+        <label for="phone"> <b> Phone number </b> </label>
+        <input type="text" class="form-control" id="phone" required [(ngModel)]="user.userDetails.phone" name="phone">
+      </div>
+
       <button (click)="gotoList()" class="btn btn-info">Cancel</button>
       <button type="submit"  data-toggle="modal" href="#ignismyModal" class="btn btn-success">Submit</button>
 

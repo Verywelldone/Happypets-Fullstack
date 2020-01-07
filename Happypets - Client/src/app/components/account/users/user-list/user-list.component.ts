@@ -11,7 +11,6 @@ import {Router} from '@angular/router';
 })
 export class UserListComponent implements OnInit {
   users: User[];
-
   searchText: any;
 
   constructor(private userService: UserService, private router: Router) {
@@ -22,7 +21,8 @@ export class UserListComponent implements OnInit {
   }
 
   reloadData() {
-    this.userService.getUserList().subscribe(data =>{
+    this.userService.getUserList().subscribe(data => {
+      console.log(data);
       this.users = data;
     });
   }
