@@ -33,7 +33,8 @@
                   <br><br>
                   <small *ngIf="registerForm.invalid"> All form fields are mandatory! </small>
                 </div>
-                <input type="button" name="next" class="next action-button" [disabled]="username.invalid || password.invalid" value="Next Step" />
+                <input type="button" name="next" class="btn  action-button" (click)="gotoList()" value="Already registered?" />
+                <input type="button" name="next" class="btn  next action-button" [disabled]="username.invalid || password.invalid" value="Next Step" />
               </fieldset>
 
               <fieldset>

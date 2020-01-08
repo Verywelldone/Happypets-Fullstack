@@ -1,57 +1,111 @@
 
-.main-section{
-  margin: 130px auto 0;
-  padding: 0;
+/*.main-section{*/
+/*  margin: 130px auto 0;*/
+/*  padding: 0;*/
+/*}*/
+
+/*.modal-content{*/
+/*  background-color: white;*/
+/*  opacity: 1;*/
+/*  padding: 0 18px;*/
+/*  border-radius: 10px;*/
+/*}*/
+
+/*.user-img{*/
+/*  margin-top: -60px;*/
+/*  margin-bottom: 45px;*/
+/*}*/
+
+/*.form-group{*/
+/*  margin-bottom: 25px;*/
+/*}*/
+
+/*.form-group input {*/
+/*  height: 42px;*/
+/*  border-radius: 5px;*/
+/*  font-size: 18px;*/
+/*  letter-spacing: 2px;*/
+/*  padding-left:54px;*/
+/*}*/
+/*.form-group::before{*/
+/*  position:absolute;*/
+/*  font-size: 22px;*/
+/*  left:28px;*/
+/*  padding-top:4px;*/
+/*  color: #555e60;*/
+/*}*/
+
+/*.forgot{*/
+/*  padding-bottom: 10px;*/
+/*}*/
+/*a{*/
+/*  color: #FFFFFF;*/
+/*}*/
+
+/*@media (min-width: 768px) {*/
+/*  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {*/
+/*    float: none;*/
+/*  }*/
+/*}*/
+
+
+h2{
+  font-size: 35px;
 }
 
-.modal-content{
-  background-color: #434e5a;
-  opacity: 1;
-  padding: 0 18px;
-  border-radius: 10px;
-}
-
-.user-img img{
-  height: 120px;
-  width: 120px;
-}
-
-.user-img{
-  margin-top: -60px;
-  margin-bottom: 45px;
-}
-
-.form-group{
-  margin-bottom: 25px;
-}
-
-.form-group input {
-  height: 42px;
-  border-radius: 5px;
-  border: 0;
-  font-size: 18px;
-  letter-spacing: 2px;
-  padding-left:54px;
-}
-.form-group::before{
-  position:absolute;
-  font-size: 22px;
-  left:28px;
-  padding-top:4px;
-  color: #555e60;
-}
-
-.forgot{
-  padding-bottom: 10px;
-}
-a{
-  color: #FFFFFF;
-}
-
-@media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
-    float: none;
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }
 
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
 
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+.container{
+  height: 50vh;
+}
+
+.modal-content{
+  text-align: center;
+  padding: 50px;
+  margin-top:30%;
+  margin-left: 55px;
+  margin-right: -55px;
+}
+
+.btn-facebook{
+  background-color: #3959A0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-google{
+  background-color: #2A75F3;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-login{
+  background-color: #11925E;
+  color: white;
+}
+
+.login-options-separator{
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+
+.small-text{
+  font-size: 12px;
+  line-height: 1.6;
+}

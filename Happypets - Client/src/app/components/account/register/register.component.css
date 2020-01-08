@@ -81,7 +81,7 @@ background-color: lightgray;
 }
 
 #msform .action-button {
-  width: 100px;
+  width: fit-content;
   background: skyblue;
   font-weight: bold;
   color: white;
