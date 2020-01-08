@@ -7,8 +7,6 @@ import {RegisterComponent} from './components/account/register/register.componen
 import {LoginComponent} from './components/account/login/login.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AboutComponent} from './components/main/about/about.component';
-import {NavbarComponent} from './components/shared/navbar/navbar.component';
-import {FooterComponent} from './components/shared/footer/footer.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HomeComponent} from './components/main/home/home.component';
 
@@ -23,7 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './components/account/users/update-user/update-user.component';
 import { UserListComponent } from './components/account/users/user-list/user-list.component';
 import { UserDetailsComponent } from './components/account/users/user-details/user-details.component';
-
+import {NavbarComponent} from './components/shared/navbar/navbar.component';
+import {FooterComponent} from './components/shared/footer/footer.component';
 
 
 // search module
@@ -37,8 +36,6 @@ import {MatInputModule} from '@angular/material';
     RegisterComponent,
     LoginComponent,
     AboutComponent,
-    NavbarComponent,
-    FooterComponent,
     HomeComponent,
     CarouselComponent,
     JumbotronComponent,
@@ -46,7 +43,9 @@ import {MatInputModule} from '@angular/material';
     ConnectLinksComponent,
     UpdateUserComponent,
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +57,7 @@ import {MatInputModule} from '@angular/material';
     ReactiveFormsModule,
     FormsModule,
     Ng2SearchPipeModule,
-    MatInputModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
