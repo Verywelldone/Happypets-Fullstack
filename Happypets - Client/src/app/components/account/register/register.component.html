@@ -23,34 +23,49 @@
                 <div class="form-card">
                   <h2 class="fs-title">Account Information</h2>
 
-
+                  <small class="mat-error" *ngIf="username.invalid && username.touched"> Your username does not look right </small>
                   <input type="text" name="uname"  formControlName="username" [(ngModel)]="user.username" required placeholder="Username" />
+
+                  <small *ngIf="password.invalid && password.touched" class="mat-error"> Make sure you use 1 letter and 1 number</small>
                   <input type="password"  name="Password"  formControlName="password" [(ngModel)]="user.password" required placeholder="Password" />
-                  <input type="password" name="confirmPassword" formControlName="confirmPassword" [(ngModel)]="confirmPassword" required placeholder="Confirm Password" />
+                  <input type="password" name="confirmPassword" formControlName="confirmPassword" [(ngModel)]="cpwd" required placeholder="Confirm Password" />
 
-
-                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                  <br><br>
+                  <small *ngIf="registerForm.invalid"> All form fields are mandatory! </small>
+                </div>
+                <input type="button" name="next" class="next action-button" [disabled]="username.invalid || password.invalid" value="Next Step" />
               </fieldset>
 
               <fieldset>
                 <div class="form-card">
+
                   <h2 class="fs-title">Personal Information</h2>
 
+                  <small class="mat-error" *ngIf="firstName.invalid && firstName.touched"> Your First Name is required! </small>
                   <input type="text" name="fname" formControlName="firstName"   [(ngModel)]="userDetails.firstName" placeholder="First Name" />
+
+                  <small class="mat-error" *ngIf="lastName.invalid && lastName.touched"> Your Last Name is required! </small>
                   <input type="text" name="lname"  formControlName="lastName" [(ngModel)]="userDetails.lastName" placeholder="Last Name" />
+
+                  <small class="mat-error" *ngIf="email.invalid && email.touched"> Your Email is required! </small>
                   <input type="email" name="email"  formControlName="email" [(ngModel)]="userDetails.email" placeholder="Email" />
+
+                  <small class="mat-error" *ngIf="phone.invalid && phone.touched"> Your number is required! </small>
                   <input type="text" name="phone"   formControlName="phone" [(ngModel)]="userDetails.phone" placeholder="Phone Number" />
+
+                  <small class="mat-error" *ngIf="address.invalid && address.touched"> Your address is required! </small>
                   <input type="text" name="address" formControlName="address" [(ngModel)]="userDetails.address" placeholder="Address" />
 
                   <select name="country" formControlName="country" [(ngModel)]="userDetails.country" class="form-control list-dt" style="margin-top: 5px;  margin-bottom: 5px">
-                    <option value="disabled" disabled selected>Select your option</option>
+                    <option value="disabled" disabled [hidden]="true" [selected]="true">Select your country</option>
                     <option value="Romania">Romania</option>
                     <option value="Italy">Italy</option>
                   </select>
-
+                  <br><br>
+                  <small *ngIf="registerForm.invalid"> All form fields are mandatory! </small>
                 </div>
-                  <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                <input type="button" name="next" class="next action-button" value="Next Step" />
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input type="button" name="next" class="next action-button" [disabled]="registerForm.invalid" value="Next Step"  />
                 </fieldset>
 
               <fieldset>
@@ -66,7 +81,7 @@
 
                   </div>
                 </div>
-                <input type="button" (click)="onSubmit()" name="make_payment" class="next action-button" value="Go to Login" />
+                <input type="button"  (click)="onSubmit()" name="make_payment" class="next action-button" value="Go to Login" />
               </fieldset>
             </form>
           </div>

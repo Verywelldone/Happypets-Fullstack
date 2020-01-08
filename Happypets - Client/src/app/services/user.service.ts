@@ -16,11 +16,11 @@ export class UserService {
   }
 
   getUser(id: number): Observable<any> {
-    console.log(id + ' ID FORM SERVICE ');
     return this.http.get(`${this.baseUrl}user-list/${id}`);
   }
 
   createUser(user: User) {
+    console.log(user);
     return this.http.post<User>(`${this.baseUrl}save-user`, user);
   }
 
